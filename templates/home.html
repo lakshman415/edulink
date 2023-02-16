@@ -36,6 +36,21 @@
   }
 </style>
 <div class="container">
+  {% comment %} <div class="row">
+    <div class="col-md-12">
+      <div class="text-right">
+        <a href="{% url 'create_article' %}" class="btn btn-primary">Add New Article</a>
+      </div>
+    </div>
+  </div> {% endcomment %}
+  {% if user.is_authenticated %}
+  <div class="row justify-content-end">
+    <div class="col-md-3">
+      <a href="{% url 'create_article' %}" class="btn btn-primary">Add New Article</a>
+    </div>
+  </div>
+{% endif %}
+
 <div class="card-deck">
   {% for article in articles %}
     <div class="card mb-3">
