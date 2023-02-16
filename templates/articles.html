@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      margin: 50px 0;
+    }
+    h2 {
+        color: #333;
+        font-size: 24px;
+        margin: 20px 0;
+    }
+    p {
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card{
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>{{ article.title }}</h1>
+            <h2>{{ article.author }}</h2>
+            <p>{{ article.content }}</p>
+        </div>
+    </div>
+</body>
+</html>

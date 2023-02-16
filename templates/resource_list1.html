@@ -1,0 +1,23 @@
+{% extends "main.html" %} 
+
+
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for resource in resources %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 1.25rem; font-family: Arial, sans-serif;">{{ resource.title }}</h5>
+            <p class="card-text" style="font-size: 1rem; font-family: Arial, sans-serif;">{{ resource.description }}</p>
+            <a href="{{ resource.link }}"target="_blank" class="btn btn-primary">Go to resource</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

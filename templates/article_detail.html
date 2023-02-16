@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+  .art_title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 50px 0;
+  }
+  .art_desc {
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+  }
+  .art_para {
+    line-height: 1.5;
+    font-size: 18px;
+  }
+  .author {
+    text-align: right;
+    font-style: italic;
+    margin-top: 50px;
+  }
+</style>
+<div class="container">
+  <h1 class="art_title">{{ article.title }}</h1>
+  <div class="author">by {{ article.author }}</div>
+  <h2 class="art_desc">Description</h2>
+  <p class="art_para">{{ article.description }}</p>
+  <h2 class="art_desc">Content</h2>
+  <p class="art_para">{{ article.content }}</p>
+</div>
+{% endblock content %}
