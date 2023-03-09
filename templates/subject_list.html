@@ -7,10 +7,16 @@
       <div class="col-12">
         <div class="d-flex justify-content-between flex-wrap">
           {% for subject in subjects %}
-            <a href="{% url 'material_list' subject.id %}" class="btn btn-primary"  style="margin-right: 2rem; margin-bottom: 1rem;">{{ subject.name }}</a>
+            <a href="{% url 'material_list' subject.id %}" class="btn btn-primary subject-btn"  style="margin-right: 3rem; margin-bottom: 3rem;">{{ subject.name }}</a>
           {% endfor %}
         </div>
       </div>
     </div>
   </div>
+  <style>
+    .subject-btn {
+      width: 267px;
+      height: 60px;
+    }
+  </style>
 {% endblock %}
