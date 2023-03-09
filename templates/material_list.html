@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  {% comment %} <h1>{{ files.0.name }}</h1> {% endcomment %}
+  <ul>
+    {% for file in files %}
+      <li><a href="{% url 'download_file' file.name %}" target="_blank">{{ file.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

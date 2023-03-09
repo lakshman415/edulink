@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <h1>{{ subject.name }}</h1>
+  {% if materials %}
+    <ul>
+      {% for material in materials %}
+        <li><a href="{{ material.material.url }}">{{ material.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No materials available for this subject.</p>
+  {% endif %}
+{% endblock %}

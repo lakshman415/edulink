@@ -1,0 +1,14 @@
+
+{% extends 'main.html' %} 
+
+
+{% block content %}
+  <h1>Subjects</h1>
+  <ul>
+    {% for subject in subjects %}
+  <a href="{% url 'material_list' subject.id %}">{{ subject.name }}</a>
+{% endfor %}
+
+  </ul>
+{% endblock %}
+
