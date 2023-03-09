@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'materials',
     'donate',
     
+    
 ]
 AUTH_USER_MODEL = 'base.User'
 
