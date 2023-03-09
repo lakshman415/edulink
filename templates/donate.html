@@ -1,0 +1,18 @@
+
+{% extends 'main.html' %} 
+
+{% block content %}
+{% load static %}
+<center>
+<div class="container">
+<div class="donate-section">
+    <br>
+    <h2> <p>Scan the QR code below to make a donation:</p></h2>
+    <br>
+    <img src="{% static 'images/qr.jpeg' %}" alt="QR Code for Payment" style="max-height: 94vh; max-width: 38%;">
+    
+  </div>
+</div>
+</center>
+  {% endblock content %}
+  

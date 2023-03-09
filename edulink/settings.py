@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'blog',
     'resourses',
     'materials',
-    # 'myapp.apps.MyappConfig',
+    'donate',
+    
 ]
 AUTH_USER_MODEL = 'base.User'
 
