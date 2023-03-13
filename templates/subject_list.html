@@ -1,6 +1,84 @@
 {% extends 'main.html' %}
 
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<center>
+	<form action="" method="get">
+		<label for="regulation">Regulation:</label>
+		<select name="regulation" id="regulation">
+			<option value="">All</option>
+			<option value="vr19">VR19</option>
+			<option value="vr20">VR20</option>
+			<option value="vr22">VR22</option>
+		</select>
+
+		<label for="year">Year:</label>
+		<select name="year" id="year">
+			<option value="">All</option>
+			<option value="1">1st Year</option>
+			<option value="2">2nd Year</option>
+			<option value="3">3rd Year</option>
+			<option value="4">4th Year</option>
+		</select>
+
+		<label for="subject">Subject:</label>
+		<select name="subject" id="subject">
+			<option value="">All</option>
+			{% for subject in subjects %}
+			<option value="{{ subject.id }}">{{ subject.name }}</option>
+			{% endfor %}
+		</select>
+
+		<label for="material_type">Material Type:</label>
+		<select name="material_type" id="material_type">
+			<option value="">All</option>
+			<option value="pdf">PDF</option>
+			<option value="qp">Question Paper</option>
+			<option value="mid">Mid Exam</option>
+			<option value="sem">Sem Exam</option>
+			<option value="vid">Video Lectures</option>
+		</select>
+
+		<button type="submit">Filter</button>
+	</form>
+
+	<table>
+		<thead>
+			<tr>
+				<th>File Name</th>
+				<th>Subject</th>
+				<th>Material Type</th>
+				<th>Year</th>
+				<th>Regulation</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for material in materials %}
+			<tr>
+				<td><a href="{{ material.file.url }}" target="_blank">{{ material.file.name }}</a></td>
+				<td>{{ material.subject.name }}</td>
+				<td>{{ material.material_type }}</td>
+				<td>{{ material.get_study_year_display }}</td>
+				<td>{{ material.regulation }}</td>
+			</tr>
+			{% empty %}
+			<tr>
+				<td colspan="5">No materials found.</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</center>
+</body>
+</html>
+
+
+
   <center> <h3 class="text-center" style="color: #121213; font-family: 'Arial', sans-serif; font-size: 1.25em;">Subjects of Electronics and Computer Engineering (VR-19)</h3> </center>
   <div class="container">
     <div class="row">
