@@ -29,6 +29,6 @@
   <h2 class="art_desc">Description</h2>
   <p class="art_para">{{ article.description }}</p>
   <h2 class="art_desc">Content</h2>
-  <p class="art_para">{{ article.content }}</p>
+  <p class="art_para">{{ article.content | safe }}</p>
 </div>
 {% endblock content %}
