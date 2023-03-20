@@ -7,7 +7,7 @@
     <a href="{% url 'home' %}" class="header__logo">
       {% comment %} <img src="{% static 'icon.png' %}" alt="Logo"> {% endcomment %}
  
-    <h1 style="color: #121213; font-weight: bold; font-family: 'Comic Sans MS', cursive, sans-serif;">eduLink</h1>
+    <h1 style="color: #121213; font-weight: bold; font-family: 'Arial', sans-serif;">EduLink</h1>
 
 </a>
     <form class="header__search" method="GET" action="{% url 'home' %}">
@@ -27,15 +27,51 @@
         <input name="q" placeholder="Search for posts" />
       </label>
     </form>
-    <div class="navbar-nav">
-      <a class="nav-link" href="{% url 'article_list' %}" style="font-size: 1.25em;"><h1 style="color: #121213; font-weight: bold; font-family: 'Arial: A sans-serif';">Blog &nbsp;</h1></a>     
-      <a class="nav-link" href="{% url 'resource_list' %}" style="font-size: 1.25em;"><h1 style="color: #121213; font-weight: bold; font-family: 'Arial: A sans-serif';">Resources &nbsp;</h1></a>     
-      {% comment %} <a class="nav-link" href="#" style="font-size: 1.25em;"><h1 style="color: #121213; font-weight: bold; font-family: 'Arial: A sans-serif';">Books &nbsp;&nbsp;</h1></a>{% endcomment %}
-      <a class="nav-link" href="{% url 'subject_list' %}" style="font-size: 1.25em;"><h1 style="color: #121213; font-weight: bold; font-family: 'Arial: A sans-serif';">Materials&nbsp;</h1></a>     
-
-      <a class="nav-link" href="{% url 'donate' %}" style="font-size: 1.25em;"><h1 style="color: #121213; font-weight: bold; font-family: 'Arial: A sans-serif';">Donate</h1></a>     
-    
-  </div>
+    <style>
+      .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-link {
+        font-size: 1.25em;
+        color: #121213;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .navbar-nav {
+          flex-direction: column;
+        }
+        
+        .nav-link {
+          margin-right: 0;
+          margin-bottom: 10px;
+          display: block;
+          text-align: center;
+        }
+      }
+      
+      </style>
+      
+      <div class="navbar-nav">
+        <a class="nav-link" href="{% url 'article_list' %}">
+          <h1>Blog</h1>
+        </a>     
+        <a class="nav-link" href="{% url 'resource_list' %}">
+          <h1>Resources</h1>
+        </a>     
+        <a class="nav-link" href="{% url 'subject_list' %}">
+          <h1>Materials</h1>
+        </a>   
+        <a class="nav-link" href="{% url 'donate' %}">
+          <h1>Donate</h1>
+        </a>     
+      </div>
     
     
     
